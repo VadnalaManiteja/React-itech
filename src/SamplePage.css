@@ -1,0 +1,71 @@
+/* Overall container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  /* Heading styles */
+  .heading {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Subheading styles */
+  .subheading {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #f1f1f1;
+  }
+  
+  /* Button styling */
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #ff4e42;
+  }
+  
+  /* Floating box styles */
+  .floating-box {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+  
+  .floating-box.red {
+    background-color: #ff6f61;
+    top: 20%;
+    left: 10%;
+  }
+  
+  .floating-box.blue {
+    background-color: #4f86f7;
+    top: 50%;
+    right: 20%;
+  }
+  
+  .floating-box.green {
+    background-color: #3ce75b;
+    bottom: 20%;
+    left: 30%;
+  }
+  

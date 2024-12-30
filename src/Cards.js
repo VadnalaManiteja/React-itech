@@ -1,18 +1,43 @@
-import React from "react";
-import "./Cards.css"; // Import the CSS file
+import React, { useEffect, useState } from 'react';
+import './Cards.css'; // Optional: For custom styles
 
-function Cards() {
+const SoftwareList = () => {
+  const [softwares, setSoftwares] = useState([]);
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/softwares', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => setSoftwares(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
   return (
-    <div className="cards-container">
-      {["Card 1", "Card 2", "Card 3", "Card 4"].map((title, index) => (
-        <div key={index} className="card">
-          <h3>{title}</h3>
-          <p>This is the description for {title}. Download the content below.</p>
-          <button className="card-button">Download</button>
-        </div>
-      ))}
+    <div className="software-list">
+      <h1>Software List</h1>
+      <div className="cards-container">
+        {softwares.map(software => (
+          <div className="card" key={software.id}>
+            <h2>{software.name}</h2>
+            <p>{software.description}</p>
+            <a href={software.file} download>
+              Download
+            </a>
+            <p><small>Uploaded at: {new Date(software.uploaded_at).toLocaleString()}</small></p>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-export default Cards;
+export default SoftwareList;

@@ -1,0 +1,54 @@
+/* Styling the container */
+.upload-container {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling the form labels and inputs */
+  .upload-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .upload-container input[type="text"],
+  .upload-container textarea,
+  .upload-container input[type="file"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .upload-container textarea {
+    resize: vertical;
+  }
+  
+  /* Styling the submit button */
+  .upload-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .upload-button:hover {
+    background-color: #555;
+  }
+  
+  .upload-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
